@@ -1,0 +1,58 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/OsbWood.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.487541163895587 -0.24138373746847555 -0.8390694278741697 3.929048733438855
+  position 1.0422446469468614 -1.525350707754703 3.743420923395022
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+}
+PointLight {
+  attenuation 0 0 1
+  intensity 0.6
+}
+DEF SLOPE Pose {
+  children [
+    Shape {
+      appearance OsbWood {
+        textureTransform TextureTransform {
+          scale 0.5 2
+        }
+      }
+      geometry DEF BOX0 Box {
+        size 0.2 0.02 0.8
+      }
+    }
+  ]
+}
+Robot {
+  translation 263936.8442541518 -14378087313.853477 47246901173.553154
+  rotation 0.3599721813247579 -0.3599321665968562 -0.8607373955633556 -1.7201295824897809
+  children [
+    Accelerometer {
+    }
+  ]
+  name "MyBobot"
+  contactMaterial "body"
+  boundingObject Cylinder {
+    height 0.8
+    radius 0.45
+  }
+  physics Physics {
+    density -1
+    mass 0.5
+  }
+  controller "accerolameter"
+  linearVelocity 173.5221084917406 -9452700.830122598 31058172.11381878
+  angularVelocity 9999.999998309153 0.1838935517995492 -0.00015535932699841724
+}
